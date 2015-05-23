@@ -58,7 +58,12 @@ public class Combine {
                     FileWriter fileWriter = new FileWriter(file);
                     BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
-                    bufferedWriter.write(name + "\t" + title + "\t" + text );
+                    bufferedWriter.write("#####name#####");
+                    bufferedWriter.write(name);
+                    bufferedWriter.write("#####title#####");
+                    bufferedWriter.write(title);
+                    bufferedWriter.write("#####text#####");
+                    bufferedWriter.write(text);
                     bufferedWriter.newLine();
                     bufferedWriter.newLine();
                     bufferedWriter.newLine();
