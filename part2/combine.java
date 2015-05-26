@@ -53,17 +53,13 @@ public class Combine {
                 File f = new File(file);
                 f.createNewFile();
 
+
                 try
                 {
                     FileWriter fileWriter = new FileWriter(file);
                     BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
-                    bufferedWriter.write("#####name#####");
-                    bufferedWriter.write(name);
-                    bufferedWriter.write("#####title#####");
-                    bufferedWriter.write(title);
-                    bufferedWriter.write("#####text#####");
-                    bufferedWriter.write(text);
+                    bufferedWriter.write(name + "\t" + title + "\t" + text );
                     bufferedWriter.newLine();
                     bufferedWriter.newLine();
                     bufferedWriter.newLine();
@@ -72,8 +68,8 @@ public class Combine {
 
                 }
                 catch(IOException ex) {
-                    System.out.println("Error writing to file '"+ file + "'");
-		}
+                    System.out.println("Error writing to file '"+ file + "'");}
+
 
                 threshold += 10;
                 docid++;
@@ -86,12 +82,7 @@ public class Combine {
                     FileWriter fileWriter = new FileWriter(file);
                     BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
-                    bufferedWriter.write("#####name#####");
-                    bufferedWriter.write(name);
-                    bufferedWriter.write("#####title#####");
-                    bufferedWriter.write(title);
-                    bufferedWriter.write("#####text#####");
-                    bufferedWriter.write(text);
+                    bufferedWriter.write(name + "\t" + title + "\t" + text );
                     bufferedWriter.newLine();
                     bufferedWriter.newLine();
                     bufferedWriter.newLine();
@@ -101,8 +92,7 @@ public class Combine {
 
                 }
                 catch(IOException ex) {
-                    System.out.println("Error writing to file '"+ file + "'");
-		}
+                    System.out.println("Error writing to file '"+ file + "'");}
 
             }
 
