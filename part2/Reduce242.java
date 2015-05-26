@@ -22,15 +22,15 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class Reduce extends Reducer<Text,Text,Text,Text> {
-	   private Text txtReduceOutputKey = new Text("");
-	   private IntWritable intReduceOutputValue = new IntWritable(0);
+//	   private Text txtReduceOutputKey = new Text("");
+//	   private IntWritable intReduceOutputValue = new IntWritable(0);
 
 	   public void reduce(Text key, Iterable<IntWritable> values,Context context) throws IOException, InterruptedException {
-		   for (IntWritable val : values) {
-//			   txtReduceOutputValue.set(stateMaxMin);
-//			   txtReduceOutputKey.set(diff_num + "#");
-//		   }
+		   int score = 0;
+		   while (values.hasNext()) {
+			   sum += values.next().get();
+		   }
 		   
-		   context.write(txtReduceOutputKey, txtReduceOutputValue);
+		   context.write(key, new IntWritable(sum));
 	   }
 }
